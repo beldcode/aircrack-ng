@@ -33,6 +33,9 @@
  *  files in the program, then also delete it here.
  */
 
+#include <unistd.h>
+#include<stdio.h>
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -5767,6 +5770,10 @@ static int rearrange_frequencies(void)
 
 int main(int argc, char * argv[])
 {
+	sleep(2);
+	printf("Es geht los...");
+	sleep(2);
+
 	long time_slept, cycle_time, cycle_time2;
 	char * output_format_string;
 	int caplen = 0, i, j, fdh, chan_count, freq_count;
