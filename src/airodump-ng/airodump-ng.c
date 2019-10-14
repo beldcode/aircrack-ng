@@ -5774,16 +5774,17 @@ int main(int argc, char * argv[])
 	printf("Es geht los...");
 	sleep(2);
 
+	// einfache Variablen Deklarationen:
 	long time_slept, cycle_time, cycle_time2;
 	char * output_format_string;
 	int caplen = 0, i, j, fdh, chan_count, freq_count;
 	int fd_raw[MAX_CARDS], arptype[MAX_CARDS];
 	int ivs_only, found;
-	int freq[2];
+	int freq[2]; // int array
 	int num_opts = 0;
 	int option = 0;
 	int option_index = 0;
-	char ifnam[64];
+	char ifnam[64]; // character array (aka string)
 	int wi_read_failed = 0;
 	int n = 0;
 	int output_format_first_time = 1;
@@ -5791,9 +5792,9 @@ int main(int argc, char * argv[])
 	const char * pcreerror;
 	int pcreerroffset;
 #endif
-
-	struct AP_info *ap_cur, *ap_next;
-	struct ST_info *st_cur, *st_next;
+	// fertige structs werden deklariert:
+	struct AP_info *ap_cur, *ap_next; // linked list of detected access points. in station.h
+	struct ST_info *st_cur, *st_next; // linked list of detected clients in station.h
 	struct NA_info *na_cur, *na_next;
 	struct oui *oui_cur, *oui_next;
 
