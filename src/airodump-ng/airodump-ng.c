@@ -5788,15 +5788,24 @@ int main(int argc, char * argv[])
 	int wi_read_failed = 0;
 	int n = 0;
 	int output_format_first_time = 1;
-#ifdef HAVE_PCRE
+#ifdef HAVE_PCRE  // https://gcc.gnu.org/onlinedocs/cpp/Ifdef.html
 	const char * pcreerror;
 	int pcreerroffset;
 #endif
 	// fertige structs werden deklariert:
+	// https://www.tu-chemnitz.de/urz/archiv/kursunterlagen/C/kap2/ptrstruct.htm
 	struct AP_info *ap_cur, *ap_next; // linked list of detected access points. in station.h
 	struct ST_info *st_cur, *st_next; // linked list of detected clients in station.h
-	struct NA_info *na_cur, *na_next;
+	struct NA_info *na_cur, *na_next; // linked list of detected macs through ack, cts or rts frames (airodump-ng.h)
+	// ACK-Frame übertragen um den Empfang von einem oder mehreren Datenpaketen zu bestätigen
+	//  cts or rts frames : https://www.itwissen.info/RTS-CTS-request-to-send-clear-to-send.html
+	// http://matej.sustr.sk/publ/articles/cts-dos/cts-dos.en.html
+	// CTS frames allocate the channel for a given duration, sent by a station or the AP as a response to an RTS frame
 	struct oui *oui_cur, *oui_next;
+
+	// linked list: https://www.learn-c.org/en/Linked_lists
+	// linked list: https://medium.com/@kojinoshiba/data-structures-in-python-series-1-linked-lists-d9f848537b4d
+	// https://dbader.org/blog/python-linked-list
 
 	struct pcap_pkthdr pkh;
 
