@@ -5803,9 +5803,12 @@ int main(int argc, char * argv[])
 	// CTS frames allocate the channel for a given duration, sent by a station or the AP as a response to an RTS frame
 	struct oui *oui_cur, *oui_next;
 
+	// fertige linked lists: /home/berphi/Dokumente/aircrack-ng/src/airodump-ng/airodump-ng.h!!
+
 	// linked list: https://www.learn-c.org/en/Linked_lists
 	// linked list: https://medium.com/@kojinoshiba/data-structures-in-python-series-1-linked-lists-d9f848537b4d
 	// https://dbader.org/blog/python-linked-list
+	// memory leak: https://www.techopedia.com/definition/3838/memory-leak
 
 	struct pcap_pkthdr pkh;
 
