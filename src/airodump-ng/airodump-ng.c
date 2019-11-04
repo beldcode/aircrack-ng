@@ -5774,6 +5774,8 @@ int main(int argc, char * argv[])
 	printf("Es geht los...");
 	sleep(2);
 
+	// sehr wichtige structs (linked lists): include/aircrack-ng/support/station.h
+
 	// einfache Variablen Deklarationen:
 	long time_slept, cycle_time, cycle_time2;
 	char * output_format_string;

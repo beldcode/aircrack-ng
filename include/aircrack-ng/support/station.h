@@ -108,7 +108,12 @@ struct AP_info
 
 	int channel; /* AP radio channel         */
 	enum channel_width_enum channel_width; /* Channel width            */
+	// enum: http://www.c-howto.de/tutorial/strukturierte-datentypen/aufzaehlungen/
 	char standard[3]; /* 802.11 standard: n or ac */
+	// 802.11 Standard: https://www.elektronik-kompendium.de/sites/net/0610051.htm
+	// https://www.networkworld.com/article/3258807/what-is-802-11ax-wi-fi-and-what-will-it-mean-for-802-11ac.html
+	// https://itstillworks.com/12760553/what-is-the-theoretical-maximum-throughput-for-wi-fi
+	// https://www.quora.com/Which-one-is-faster-802-11ac-or-4G
 	struct n_channel_info n_channel; /* 802.11n channel info     */
 	struct ac_channel_info ac_channel; /* 802.11ac channel info    */
 	int max_speed; /* AP maximum speed in Mb/s */
