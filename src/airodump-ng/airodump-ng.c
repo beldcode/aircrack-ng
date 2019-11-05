@@ -5975,7 +5975,10 @@ int main(int argc, char * argv[])
 
 	lopt.keyout = (char *) malloc(512);
 	ALLEGE(lopt.keyout != NULL);
+
+	// reservierter Speicher
 	memset(lopt.keyout, 0, 512);
+	// Befüllen des Speichers
 	snprintf(lopt.keyout,
 			 511,
 			 "keyout-%02d%02d-%02d%02d%02d.keys",
@@ -5984,6 +5987,7 @@ int main(int argc, char * argv[])
 			 lt->tm_hour,
 			 lt->tm_min,
 			 lt->tm_sec);
+			 
 
 	for (i = 0; i < MAX_CARDS; i++)
 	{
