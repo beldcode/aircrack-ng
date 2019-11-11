@@ -6067,8 +6067,8 @@ int main(int argc, char * argv[])
 		switch (option)
 		{
 			case 0:
-
 				break;
+
 
 			case ':':
 
